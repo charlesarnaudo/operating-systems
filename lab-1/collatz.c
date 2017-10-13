@@ -5,10 +5,12 @@
 
 int collatz(int num) {
 	if (num % 2 == 0) {
-		return (num / 2);
+		num = num / 2;
+		return (num);
+	} else {
+		num = (3 * num) + 1;
+		return (num);
 	}
-	return ((3 * num) + 1);
-
 }
 
 int main() {
@@ -25,47 +27,18 @@ int main() {
 
 	pid = fork();
 
-	if (pid == 0) {
-		while (result != 0) {
-			if(result % 2 == 0) {
- 				result /= 2;
-			} else {
- 				result = (3 * result) + 1;
-			}
-			printf("%d\n",result);
-			printf("Child finished\n");
-		}
+	if (pid < 0) {
+		printf("Child process could not be created\n");
+		return 0;
+	} else if (pid == 0) {
+		result = num;
+		do {
+			result = collatz(result);
+			printf("%d \n", result);
+		} while (result != 1);
 	} else {
-		printf("Parent working\n");
-		wait();
-		printf("Parent finished");
+		printf("Child working\n");
+		wait(0);
+		printf("Child finished\n");
 	}
-
 }
-
-	// while (result != 1) {
-	// if(result % 2 == 0) {
-    //  		result /= 2;
-    // } else {
-    //  		result = (3 * result) + 1;
-    // }
-	// 	printf("%d", result);
-	// 	printf("\n");
-	// }
-
-	// while (result != 1) {
-	// 	printf("%d", pid);
-	// 	if (pid == 0) {
-	// 		result = collatz(num);
-	// 		printf("%d", result);
-	// 	// } else if (pid > 0) {
-	// 	// 	printf("%d", pid);
-	// 	// 	printf("Waiting on parent process\n");
-	// 	// 	wait(&status);
-	// 	} else {
-	// 		printf("Child creation not successful\n");
-	// 		return 0;
-	// 	}
-	// }
-
-	
