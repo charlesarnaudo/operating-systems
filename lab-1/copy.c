@@ -15,7 +15,7 @@ int main() {
      scanf("%s", output_file);
      out = fopen(output_file, "w");
 
-     if (in != NULL) {
+     if (in != NULL && strcmp(input_file, output_file) != 0) {
           if (out != NULL) {
                char ch;
                ch = fgetc(in);
@@ -23,18 +23,19 @@ int main() {
                     fputc(ch, out);
                     ch = fgetc(in);
                }
-
           } else {
                printf("Can't create output_file\n");
+               return 0;
           }
 
      } else {
-          printf("File to copy does not exist\n");
+          printf("File to copy does not exist or file paths the same\n");
+          return 0;
      }
 
      fclose(in);
      fclose(out);
 
      printf("Copy successful\n");
-
+     return 0;
 }
