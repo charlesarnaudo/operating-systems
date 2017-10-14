@@ -10,7 +10,7 @@ int main() {
   if (mem == NULL) {
     printf("Couldn't allocate memory");
   } else {
-    strcpy( mem,"Wentworth");
+    strcpy(mem,"Wentworth");
   }
   printf("Dynamically allocated memory content : %s\n", mem );
   free(mem);

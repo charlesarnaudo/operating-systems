@@ -1,0 +1,330 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"nmu",
+				"number"
+			],
+			[
+				"nu",
+				"number"
+			],
+			[
+				"ot",
+				"output_file"
+			],
+			[
+				"in",
+				"input_file"
+			],
+			[
+				"out",
+				"output_file"
+			],
+			[
+				"dic",
+				"dictionary\tparam"
+			],
+			[
+				"Spel",
+				"SpellFuncs\tclass"
+			],
+			[
+				"d",
+				"dictionary\tstatement"
+			],
+			[
+				"dict",
+				"dictionary"
+			],
+			[
+				"spellfun",
+				"spellfuncs\tstatement"
+			],
+			[
+				"mi",
+				"mispelled\tparam"
+			],
+			[
+				"di",
+				"dictionary"
+			],
+			[
+				"wo",
+				"word_suggestions\tstatement"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 247.0,
+		"last_filter": "pytho",
+		"selected_items":
+		[
+			[
+				"pytho",
+				"User: Python PEP8 Autoformat"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"proj",
+				"Project: Add Folder"
+			],
+			[
+				"term",
+				"Preferences: Terminal View: Color Scheme"
+			],
+			[
+				"box",
+				"Boxy Theme: Configuration"
+			],
+			[
+				"termi",
+				"Preferences: Terminal View: Color Scheme"
+			],
+			[
+				"termin",
+				"Preferences: Terminal View: Color Scheme"
+			],
+			[
+				"gitgutter",
+				"Preferences: GitGutter Settings"
+			],
+			[
+				"remo",
+				"Package Control: Remove Package"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"ana",
+				"Build With: Anaconda Python Builder"
+			],
+			[
+				"rem",
+				"Package Control: Remove Package"
+			],
+			[
+				"lin",
+				"SublimeLinter: Disable Linting"
+			],
+			[
+				"lint",
+				"SublimeLinter: Choose Lint Mode"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"remov",
+				"Package Control: Remove Package"
+			],
+			[
+				"reov",
+				"Package Control: Remove Package"
+			],
+			[
+				"in",
+				"Package Control: Install Package"
+			],
+			[
+				"boxy",
+				"Boxy Theme: Preferences"
+			],
+			[
+				"install",
+				"Install Package Control"
+			]
+		],
+		"width": 430.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/charles/GitHub/operating-systems/lab-1/copy.c",
+		"/Users/charles/GitHub/operating-systems/lab-1/copy2.c",
+		"/Users/charles/GitHub/natural-language-processing/lab-1/spellcheck.py",
+		"/Users/charles/GitHub/operating-systems/examples/pointers.c",
+		"/Users/charles/GitHub/operating-systems/examples/memalloc.c",
+		"/Users/charles/GitHub/natural-language-processing/lab-1/spellfuncs.py",
+		"/Users/charles/Library/Application Support/Sublime Text 3/Packages/User/TerminalView.hidden-tmTheme",
+		"/Users/charles/Library/Application Support/Sublime Text 3/Packages/TerminalView/TerminalView.hidden-tmTheme",
+		"/Users/charles/GitHub/natural-language-processing/README.md",
+		"/Users/charles/GitHub/python-projects/flask/pat.py",
+		"/Users/charles/Library/Application Support/Sublime Text 3/Packages/Anaconda/Anaconda.sublime-settings",
+		"/Users/charles/Desktop/*Train sound* Look at that, the train just pulled",
+		"/Users/charles/Library/Application Support/Sublime Text 3/Packages/User/Anaconda.sublime-settings",
+		"/Users/charles/GitHub/natural-language-processing/.gitignore",
+		"/Users/charles/Desktop/ok",
+		"/Users/charles/Library/Application Support/Sublime Text 3/Packages/Terminality/Default (OSX).sublime-keymap",
+		"/Users/charles/Library/Application Support/Sublime Text 3/Packages/Terminality/Default.sublime-keymap",
+		"/Users/charles/Library/Application Support/Sublime Text 3/Packages/Terminal/Default (OSX).sublime-keymap"
+	],
+	"find":
+	{
+		"height": 22.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 22.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.astyle_error_message":
+	{
+		"height": 0.0
+	},
+	"output.exec":
+	{
+		"height": 25.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "collatz.sublime-project",
+	"replace":
+	{
+		"height": 40.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"python-projects/flask/pat.py"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": false,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 150.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
