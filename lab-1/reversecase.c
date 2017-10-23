@@ -5,14 +5,19 @@
 #include <unistd.h> 
 
 /**
-Note: The code at this linked was used as an examples pipes. 
+Note: The code at this linked was used as an examples on how to use pipes. 
 	  https://www.cs.rutgers.edu/~pxk/416/notes/c-tutorials/pipe.html
 **/
 
-// char reversecase(char *str) {
-// 	char str[100] = str;
-// 
-// }
+void reversecase(char *str) {
+	for (int i = 0; i < strlen(str); i++) {
+		if (str[i] >= 'A' && str[i] <= 'Z') {
+			str[i] += 32;
+		} else {
+			str[i] -= 32;
+		}
+	}
+}
 
 int main() {
 	int fd[2];
@@ -30,51 +35,14 @@ int main() {
 		printf("Could not create process");
 		exit(0);
 	} else if (pid == 0) {
-		printf("Child process created");
-		// reversecase()
+		printf("Child process created\n");
+		close(fd[0]);
+		reversecase(str);
+		write(fd[1], str, (strlen(str) + 1));
+		exit(0);
 	} else {
 		printf("Child working\n");
 		wait(0);
 		printf("Child finished\n");
 	}
-//
-//	char buf[1025];
-//	char *data = "hello... this is sample data";
-//
-//	pipe(fd);
-//	write(fd[1], data, strlen(data));
-//	if ((int n = read(fd[0], buf, 1024)) >= 0) {
-//		buf[n] = 0;	/* terminate the string */
-//		printf("read %d bytes from the pipe: \"%s\"\n", n, buf);
-//	}	
-//	else
-//		perror("read");
-//	exit(0);
-
-//	int fd[2];
-//	int pid;
-//	char parent[100]; child[100], string[100];
-//
-//	printf("Enter string to reverse case on: ");
-//    scanf("%s", string);
-//  
-//	pipe(fd);
-//	pid = fork();
-//
-//	if (pid == -1) {
-//		printf("Child process could not be created\n");
-//		return 0;
-//	} else if (pid == -0) {
-//		close(fd[0]);
-//		printf("Child side closed\n");
-//		pid = getpid();
-//		printf("Child(%d): Recieved Message\n\nChild(%d): Toggling Case and Sending to Parent\n",pid, pid);
-//
-//		
-//		write(fd[1], input, (strlen(string)+1));
-//        exit(0);
-//	} else {
-//		close(fd[1]);
-//		printf("Parent process pipe closed\n");
-//	}
 }
