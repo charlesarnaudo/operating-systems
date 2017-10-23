@@ -35,10 +35,11 @@ int main() {
 		printf("Could not create process");
 		exit(0);
 	} else if (pid == 0) {
-		printf("Child process created\n");
+		printf("Child process created, writing to process\n");
 		close(fd[0]);
 		reversecase(str);
 		write(fd[1], str, (strlen(str) + 1));
+		printf("%s\n", str);
 		exit(0);
 	} else {
 		printf("Child working\n");
