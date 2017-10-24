@@ -1,20 +1,17 @@
 #include <pthread.h>
 #include<stdio.h>
 
-struct Res
-{
+struct Res {
   double ave;
   int min;
   int max;
 }Res;
 int size = 0;
 
-void *findAve(void *x)
-{
+void *findAve(void *x) {
   int *val_x = (int *) x;
   int sum = 0;
-  for(int i = 0; i < size; i++)
-  {
+  for(int i = 0; i < size; i++) {
     sum += val_x[i];
   }
   
@@ -23,14 +20,11 @@ void *findAve(void *x)
   pthread_exit(0);
 }
 
-void *findMax(void *x)
-{
+void *findMax(void *x) {
   int *val_x = (int *) x;
   int max = val_x[0];
-  for(int i = 0; i < size; i++)
-  {
-    if(max - val_x[i] < 0)
-    {
+  for(int i = 0; i < size; i++) {
+    if(max - val_x[i] < 0) {
       max = val_x[i];
     }
   }
@@ -38,14 +32,11 @@ void *findMax(void *x)
   pthread_exit(0);
 }
 
-void *findMin(void *x)
-{
+void *findMin(void *x) {
   int *val_x = (int *) x;
   int min = val_x[0];
-  for(int i = 0; i < size; i++)
-  {
-    if(min - val_x[i] > 0)
-    {
+  for(int i = 0; i < size; i++) {
+    if(min - val_x[i] > 0) {
       min = val_x[i];
     }
   }
@@ -60,8 +51,7 @@ int main()
   int nums[size];
   
   printf("enter numbers by pressing enter between entries\n");
-  for(int i=0; i<size; i++)
-  {
+  for(int i=0; i<size; i++) {
     scanf("\n%d",&nums[i]);
   }
   
