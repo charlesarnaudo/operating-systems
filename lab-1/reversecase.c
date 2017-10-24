@@ -38,7 +38,7 @@ int main() {
 		printf("Child process created, writing to process\n");
 		close(fd[0]);
 		reversecase(str);
-		write(fd[1], str, (strlen(str) + 1));
+		write(fd[0], str, (strlen(str) + 1));
 		printf("%s\n", str);
 		exit(0);
 	} else {
