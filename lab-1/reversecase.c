@@ -1,16 +1,16 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include<string.h>
-#include <fcntl.h> 
-#include <unistd.h> 
+#include <fcntl.h>
+#include <unistd.h>
 
 /**
-Note: The code at this linked was used as an examples on how to use pipes. 
+Note: The code at this linked was used as an examples on how to use pipes.
 	  https://www.cs.rutgers.edu/~pxk/416/notes/c-tutorials/pipe.html
 **/
 
 void reversecase(char *str) {
-	for (int i = 0; i < strlen(str); i++) {
+for (int i = 0; i < strlen(str); i++) {
 		if (str[i] >= 'A' && str[i] <= 'Z') {
 			str[i] += 32;
 		} else {
@@ -26,7 +26,7 @@ int main() {
 
 	printf("Please enter a string to reverse the caser of: ");
 	scanf("%s", str);
-	
+
 	pipe(fd);
 
 	pid = fork();

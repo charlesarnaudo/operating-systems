@@ -1,10 +1,10 @@
 #include <stdio.h>
-#include <unistd.h> 
+#include <unistd.h>
 #include <sys/types.h>
 #include <sys/wait.h>
 
 int collatz(int num) {
-	if (num % 2 == 0) {
+  if (num % 2 == 0) {
 		num = num / 2;
 		return (num);
 	} else {
@@ -23,7 +23,7 @@ int main() {
 	if (num < 0) {
 		printf("Please enter a number greater than 0\n");
 		return 0;
-	} 
+	}
 
 	pid = fork();
 

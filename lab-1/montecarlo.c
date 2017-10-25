@@ -1,26 +1,38 @@
 #include <pthread.h>
 #include <stdio.h>
-#include <stdlib.h>
 #include <math.h>
+#include <stdlib.h>
 #include <string.h>
 
-// struct Point {
-// 	int x;
-// 	int y;
-// }Point;
-// 
-// double res;
-// 
-// struct Point[size] getRand(int num) {
-// 	
-// }
 
+double res;
+int size;
+int inCir;
+
+void *numInCircle(void *x) {
+  for (int i = 0; i < size; i++) {
+    double x = (double)rand() / RAND_MAX;
+    double y = (double)rand() / RAND_MAX;
+    if ((x * x + y * y) <= 1) {
+      inCir++;
+    }
+  }
+}
 
 int main() {
-	printf("Enter the amount of points\n");
-	//scanf("%d", &size);
-	unsigned int rand_state = rand();
-	double x = rand_r(&rand_state) / ((double)RAND_MAX + 1) * 2.0 - 1.0;
-	printf("%d\n", x);
+  srand(time(NULL));
+  pthread_t monte;
 
+
+  printf("Enter amount of points\n");
+  scanf("%d", &size);
+
+  pthread_create(&monte, NULL, &numInCircle, NULL);
+
+  pthread_join(monte, NULL);
+
+  double pi = (double)(4.0 * size) / inCir;
+  printf("\napproximation of pi: %lf\n", pi);
+
+  return 0;
 }
