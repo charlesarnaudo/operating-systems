@@ -24,7 +24,7 @@ int main() {
 	int pid;
 	char str[128];
 
-	printf("Please enter a string to reverse the caser of: ");
+	printf("Please enter a string to reverse the case of: ");
 	scanf("%s", str);
 
 	pipe(fd);
