@@ -19,14 +19,14 @@ void *d1_add(void *x) {
 			enter = false;
 			while (!turn) {
 				printf("%s\n", "Waiting for p2 to fininsh...");
-				sleep(1000);
+				sleep(100);
 			}
 		}
+		printf("%s\n", "P1 - CRITICAL SECTION, accessing memory");
+		test = 2;
+		turn = false;
+		printf("%s\n", "Exiting critical section");
 	}
-	printf("%s\n", "CRITICAL SECTION, accessing memory");
-	test = 2;
-	turn = false;
-	printf("%s\n", "Exiting critical section");
 }
 
 void *d2_add(void *x) {
@@ -35,18 +35,18 @@ void *d2_add(void *x) {
 	bool enter = true;
 	bool turn = false;
 	while (enter) {
-		if (turn) {
+		if (!turn) {
 			enter = false;
 			while (!turn) {
 				printf("%s\n", "Waiting for p1 to fininsh...");
-				sleep(1000);
+				sleep(100);
 			}
 		}
+		printf("%s\n", "P2 - CRITICAL SECTION, accessing memory");
+		test = 5;
+		turn = false;
+		printf("%s\n", "Exiting critical section");
 	}
-	printf("%s\n", "CRITICAL SECTION, accessing memory");
-	test = 5;
-	turn = false;
-	printf("%s\n", "Exiting critical section");
 }
 
 int main() {
@@ -55,7 +55,7 @@ int main() {
 
 	int test = 0; //values to test on
 
-	printf("%s\n", "Creating threads and passing test value to see if threads access at the same time");
+	printf("%s\n", "Creating threads");
 
 	bool flag = true;
 	while(flag) {
