@@ -1,10 +1,10 @@
 #include <stdio.h>
 #include <sys/sysinfo.h>
 
-int main() {
-    printf("This system has %d processors configured and "
-        "%d processors available.\n",
-        get_nprocs_conf(), get_nprocs());
+void printProcessors() {
+    printf("This system has %d processors\n", get_nprocs_conf());
+}
 
-    return 0;
+int main() {
+    printProcessors();
 }
