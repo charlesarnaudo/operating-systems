@@ -1,5 +1,15 @@
 #!/bin/sh
+
+# Kill containers
+docker kill $(docker ps -q)
+
+# Delete containers
 docker rm $(docker ps -aq)
-docker rmi $(docker images -q)
+
+# Delete images
+# docker rmi $(docker images -q)
+
+# Build and attach
 docker build -t "image_name:mergesort" .
-docker run -i -t image_name:mergesort /bin/bash
+docker run -td --name mergesort image_name:mergesort
+docker exec mergesort /code/run.sh
