@@ -1,5 +1,5 @@
 #!/bin/sh
 
 cd code/
-gcc mergesort.c -o mergesort.out
-./mergesort.out
+gcc sortMerge.c -pthread -o sortMerge
+./sortMerge 4 data_128
