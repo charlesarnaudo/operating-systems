@@ -7,13 +7,11 @@
 #include <sys/mman.h>
 #include <unistd.h>
 #include <pthread.h>
+#include <sys/sysinfo.h>
 
-// #include <sys/sysinfo.h>
-
-// void printProcessors() {
-//     printf("This system has %d processors\n", get_nprocs_conf());
-// }
-
+void printProcessors() {
+    printf("This system has %d processors\n", get_nprocs_conf());
+}
 
 int cmpfnc(const void* a, const void* b) { 
     const char* aa = (const char*)a;
@@ -21,7 +19,14 @@ int cmpfnc(const void* a, const void* b) {
     return strcmp(aa, bb);
 }
 
+void qsort_thread(char *chunk) {
+    printf("Starting thread...\n");
+    size_t str_len = sizeof(chunk) / sizeof(char *); 
+    qsort(chunk, str_len, sizeof(char *), cmpfnc);
+}
+
 int main(int argc, char *argv[]) {
+    // CLI arg error checking
     if (argc == 1) {
         printf("No amount of threads specified\n");
         return(0);
@@ -40,7 +45,7 @@ int main(int argc, char *argv[]) {
     
     // Create memory map, find size of str in mmap
     char *map = mmap(0, filesize, PROT_READ | PROT_WRITE, MAP_SHARED, fp, 0);
-    size_t strings_len = sizeof(map) / sizeof(char *); 
+    size_t str_len = sizeof(map) / sizeof(char *); 
 
     printf("Sort starting....\n");
     
@@ -49,29 +54,26 @@ int main(int argc, char *argv[]) {
     if (chunkSize * nThreads < sizeof(map)) {
         ++chunkSize;
     }
-    printf("%i\n", nThreads);
-    for (int i = 0; i < nThreads; i++) {
-        int start = i * chunkSize;
-        int end = start + chunkSize - 1;
-        if (i == nThreads - 1) {
-            end =  - 1;
-        }
-        
-        for (int i = start; i <= end; i++) {
-            printf("%d", map[i]);
-        }
-            printf("\n");
-}
 
     // Create threads
     pthread_t threads[nThreads];
-    // for(int i = 0; i<nThreads; i++) {
-    //     pthread_create (&threads[i], NULL , &thread_function, NULL);
-    // } 
+    for(int i = 0; i < nThreads; i++) {
+        int start = i * chunkSize;
+        int end = start + chunkSize - 1;
+        char* chunk[chunkSize];
+        for (int i = start; i < end; i++) {
+            chunk[i] = map[i];
+        }
+        pthread_create (&threads[i], NULL , qsort_thread, (char*) chunk);
+    }
+    sleep(2);
+    printf("\n");
+    // Join threads
+    for (int i = 0; i < nThreads; i++) {
+        pthread_join(&threads[i], NULL);
+        printf("Joining thread...\n");
+    }
 
-
-    qsort(map, strings_len, sizeof(char *), cmpfnc);
-    // for (int i = 0; i < filesize; i++) {
-    //     printf("%i\n", map[i]);
-    // }
+    printf("\n");
+    printf("Sorting finished\n");
 }
